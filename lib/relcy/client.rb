@@ -1,16 +1,19 @@
 require "relcy/base"
+require "faraday"
+require "faraday_middleware"
+require "typhoeus"
+require "typhoeus/adapters/faraday"
 
 module Relcy
   class Client < Relcy::Base
+    include Relcy::API
 
-    attr_accessor :api_key
-
-    # Initializes a new Relcy Client
-    #
-    # @param api_key [String]
-    # @return [Relcy::Client]
     def initialize(api_key)
-      @api_key = api_key
+      @connection = Faraday.new(:url => BASE_URL) do |conn|
+        conn.request  :url_encoded
+        conn.adapter :typhoeus
+        conn.params["api_key"] = api_key
+      end
     end
 
   end

@@ -3,5 +3,7 @@
 require "bundler/setup"
 require "relcy"
 
+API_KEY = "5E23B46EE823001F9AE0DF0665B56B617122FCC3"
+
 require "pry"
 Pry.start
