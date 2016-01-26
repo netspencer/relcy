@@ -11,6 +11,7 @@ module Relcy
     def initialize(api_key)
       @connection = Faraday.new(:url => BASE_URL) do |conn|
         conn.request  :url_encoded
+        conn.response :json, :content_type => /\bjson$/
         conn.adapter :typhoeus
         conn.params["api_key"] = api_key
       end
