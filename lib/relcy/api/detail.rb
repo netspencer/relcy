@@ -4,7 +4,7 @@ module Relcy
   module API
     module Detail
       def detail(id, options = {})
-        @connection.get "detail", { :id => id }
+        @connection.get "detail", { :id => id }.merge(options)
       end
     end
   end
