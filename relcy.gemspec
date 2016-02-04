@@ -18,14 +18,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "addressable", "~> 2.3"
-  spec.add_dependency "equalizer", "~> 0.0.11"
   spec.add_dependency "faraday", "~> 0.9"
   spec.add_dependency "typhoeus", "~> 1.0"
   spec.add_dependency "faraday_middleware", "~> 0.9"
   spec.add_dependency "hashie", "~> 3.4.3"
   spec.add_dependency "memoizable", "~> 0.4.0"
-  spec.add_dependency 'naught', "~> 1.0"
   spec.add_dependency 'json', "~> 1.8"
 
   spec.add_development_dependency "bundler", "~> 1.11"
